@@ -1,0 +1,20 @@
+{
+  "name": "electron-kanban",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app/main.js",
+  "scripts": {
+    "start": "electron .",
+    "rebuild": "electron-rebuild ."
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "electron": "^10.1.2",
+    "serialport": "^9.0.1"
+  },
+  "devDependencies": {
+    "electron-packager": "^15.1.0",
+    "electron-rebuild": "^2.0.3"
+  }
+}

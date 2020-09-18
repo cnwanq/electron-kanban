@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>电子看板</title>
+    <!-- https://electronjs.org/docs/tutorial/security#csp-meta-tag -->
+    <meta
+      http-equiv="Content-Security-Policy"
+      content="script-src 'self' 'unsafe-inline';"
+    />
+    <link rel="stylesheet" href="style.css" type="text/css" />
+  </head>
+  <body>
+
+    <h1>88线生产管理看板</h1>
+
+    <!-- <button class="alert">Current Directory</button> -->
+
+    <div>日期：2020年09月19日</div>
+    <div>时间：10:00</div>
+    <div>产品型号：ABCD</div>
+    <div>计划产量：1900</div>
+    <div>实际产量：1032</div>
+    <div>生产比率：40%</div>
+  </body>
+  <script>
+    require('./renderer');
+  </script>
+  
+</html>
