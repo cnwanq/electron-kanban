@@ -5,10 +5,11 @@
   "main": "app/main.js",
   "scripts": {
     "start": "electron .",
-    "installsqlite": "npm install sqlite3 --build-from-source --runtime=electron --target=10.1.2 --dist-url=https://atom.io//download/electron",
-    "postinstall": "electron-rebuild",
-    "package-win": "electron-packager ./ kanban --platform=win32 --arch=ia32 --out ./out --overwrite",
-    "package-win64": "electron-packager ./ kanban --platform=win32 --arch=x64 --out ./out --overwrite"
+    "pack": "electron-builder --dir",
+    "dist": "electron-builder",
+    "dist-win32": "electron-builder --win --ia32",
+    "dist-win64": "electron-builder --win --x64",
+    "postinstall": "electron-rebuild erelectron-builder install-app-deps"
   },
   "author": "",
   "license": "ISC",
