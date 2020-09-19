@@ -133,7 +133,7 @@ function connectPort(portPath) {
       getElementById("labeValue2").innerHTML = plan;
       getElementById("labeValue3").innerHTML = actual;
       getElementById("labeValue4").innerHTML = (
-        ((actual * 1.0) / plan) *
+        ((actual * 100.0) / plan) *
         1.0
       ).toFixed(2);
 
