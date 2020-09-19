@@ -8,52 +8,68 @@
       http-equiv="Content-Security-Policy"
       content="script-src 'self' 'unsafe-inline';"
     />
-    <!--<link rel="stylesheet" href="../node_modules/bootstrap/dist/css/bootstrap.css" /> -->
-    
+    <link
+      rel="stylesheet"
+      href="../node_modules/bootstrap/dist/css/bootstrap.css"
+    />
+
     <link rel="stylesheet" href="style.css" type="text/css" />
   </head>
   <body>
-
+    <div>
+      串口：<select id="selectSerialPortPath"></select>
+      <button id="buttonConnect">连接</button>
+      <button id="buttonRefresh">断开/刷新</button>
+      <button id="buttonExport">导出数据</button>
+      <label id="labelConnectStatus"></label>
+    </div>
     <div class="container">
-      <h2><p id="labelLine"></p>线生产管理看板</h2>
-      <!-- <p>
-          <label for="new-task">生产管理看板</label>
-          <input id="new-task" type="text">
-          <button>Add</button>
-      </p>
-  
-      <h3>Todo</h3>
-      <ul id="incomplete-tasks">
-  
-      </ul>
-  
-      <h3>Completed</h3>
-      <ul id="completed-tasks">
-  
-      </ul> -->
-      <div class="row">
-        串口：<select id="selectSerialPortPath"></select>
-        <button id="buttonConnect">连接</button>
-        <label id="labelConnectStatus"></label>
+      <div style="text-align: center; margin-bottom: 48px">
+        <h1 style="font-size: 60px">
+          <span class="value">88</span>线生产管理看板
+        </h1>
       </div>
-
-      <div class="row">
-        <div class="" style="margin-right: 0px;">
-          日期：<label id="labelYear">2020</label>年<label id="labelMonth"
-            >09</label
-          >月<label id="labelDay">19</label>日
-        </div>
-        <div class="">
-          时间：<label id="labelHour">10</label>:<label id="labelMinute">10</label
-          >:<label id="labelSecond">10</label>
-        </div>
-      </div>
-      <div class="row">产品型号：<label id="labeValue1">xxx</label></div>
-      <div class="row">计划产量：<label id="labeValue2">xxx</label></div>
-      <div class="row">实际产量：<label id="labeValue3">xxx</label></div>
-      <div class="row">生产比率：<label id="labeValue4">xxx</label></div>
-  </div>
-
+      <table class="table" style="font-size: 42px">
+        <tbody>
+          <tr>
+            <th colspan="2">
+              <span
+                ><label id="labelYear" class="value">2020</label>年<label
+                  id="labelMonth"
+                  class="value"
+                  >09</label
+                >月<label id="labelDay" class="value">19</label>日</span
+              ><span style="float: right"
+                ><label id="labelHour" class="value">10</label>:<label
+                  id="labelMinute"
+                  class="value"
+                  >10</label
+                >:<label id="labelSecond" class="value">10</label></span
+              >
+            </th>
+          </tr>
+          <tr>
+            <th>产品型号</th>
+            <td><label id="labeValue1" class="value">xxx</label></td>
+          </tr>
+          <tr>
+            <th>计划产量</th>
+            <td><label id="labeValue2" class="value">xxx</label></td>
+          </tr>
+          <tr>
+            <th>实际产量</th>
+            <td><label id="labeValue3" class="value">xxx</label></td>
+          </tr>
+          <tr>
+            <th>生产比例</th>
+            <td>
+              <label id="labeValue4" class="value">xxx</label
+              ><span style="font-size: 28px; color: #3e4145"> %</span>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
   </body>
   <script>
     require("./renderer");
