@@ -20,8 +20,8 @@
   },
   "devDependencies": {
     "electron": "^10.1.2",
-    "electron-rebuild": "^2.0.3",
-    "electron-packager": "^15.1.0"
+    "electron-builder": "^22.8.1",
+    "electron-rebuild": "^2.0.3"
   },
   "__npminstall_done": false
 }
