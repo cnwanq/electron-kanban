@@ -8,23 +8,54 @@
       http-equiv="Content-Security-Policy"
       content="script-src 'self' 'unsafe-inline';"
     />
+    <!--<link rel="stylesheet" href="../node_modules/bootstrap/dist/css/bootstrap.css" /> -->
+    
     <link rel="stylesheet" href="style.css" type="text/css" />
   </head>
   <body>
 
-    <h1>88线生产管理看板</h1>
+    <div class="container">
+      <h2><p id="labelLine"></p>线生产管理看板</h2>
+      <!-- <p>
+          <label for="new-task">生产管理看板</label>
+          <input id="new-task" type="text">
+          <button>Add</button>
+      </p>
+  
+      <h3>Todo</h3>
+      <ul id="incomplete-tasks">
+  
+      </ul>
+  
+      <h3>Completed</h3>
+      <ul id="completed-tasks">
+  
+      </ul> -->
+      <div class="row">
+        串口：<select id="selectSerialPortPath"></select>
+        <button id="buttonConnect">连接</button>
+        <label id="labelConnectStatus"></label>
+      </div>
 
-    <!-- <button class="alert">Current Directory</button> -->
+      <div class="row">
+        <div class="" style="margin-right: 0px;">
+          日期：<label id="labelYear">2020</label>年<label id="labelMonth"
+            >09</label
+          >月<label id="labelDay">19</label>日
+        </div>
+        <div class="">
+          时间：<label id="labelHour">10</label>:<label id="labelMinute">10</label
+          >:<label id="labelSecond">10</label>
+        </div>
+      </div>
+      <div class="row">产品型号：<label id="labeValue1">xxx</label></div>
+      <div class="row">计划产量：<label id="labeValue2">xxx</label></div>
+      <div class="row">实际产量：<label id="labeValue3">xxx</label></div>
+      <div class="row">生产比率：<label id="labeValue4">xxx</label></div>
+  </div>
 
-    <div>日期：2020年09月19日</div>
-    <div>时间：10:00</div>
-    <div>产品型号：ABCD</div>
-    <div>计划产量：1900</div>
-    <div>实际产量：1032</div>
-    <div>生产比率：40%</div>
   </body>
   <script>
-    require('./renderer');
+    require("./renderer");
   </script>
-  
 </html>
