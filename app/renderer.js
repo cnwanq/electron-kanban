@@ -65,10 +65,12 @@ function connectPort(portPath) {
     // open logic
     connectedSerialPath = portPath;
     currentPort = port;
+    isConnected = true;
     getElementById("labelConnectStatus").innerText = "已连接";
   });
 
   port.on("data", function (data) {
+    console.log('data:', data);
     if (data.length > 0 && data.length == 41) {
       // 4，5 年
       // let year = '' + data[4]+data[5];
@@ -96,7 +98,7 @@ function connectPort(portPath) {
       let second = hex2int(secondHex);
       // console.log('秒:'+ hex2int(secondHex));
 
-      // updateDateTimeUI(year, month, day, hour, minute, second);
+      updateDateTimeUI(year, month, day, hour, minute, second);
 
       let model1Hex = data[15].toString(16) + data[16].toString(16);
       let model1 =
@@ -119,11 +121,11 @@ function connectPort(portPath) {
       let line = hex2int(lineHex);
       // console.log('线:'+ hex2int(lineHex));
       // 26, 27 计划产量
-      let planHex = data[23].toString(25) + data[26].toString(16);
+      let planHex = data[25].toString(16) + data[26].toString(16);
       let plan = hex2int(planHex);
       // console.log('计划产量:'+ hex2int(planHex));
       // 28, 29 实际产量
-      let actualHex = data[23].toString(27) + data[28].toString(16);
+      let actualHex = data[27].toString(16) + data[28].toString(16);
       let actual = hex2int(actualHex);
       // console.log('实际产量:'+ actualHex + "-"+ actual);
 
@@ -262,7 +264,9 @@ function exportData() {
 function appStart() {
   initPorts();
   const intervaler = setInterval(() => {
-    refreshDateUI();
+    if (!isConnected) {
+      refreshDateUI();
+    }
     sendPortData();
   }, 1000);
 

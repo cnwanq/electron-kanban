@@ -14,5 +14,5 @@ app.on("ready", () => {
 
   mainWindow.webContents.loadFile("./app/index.html");
   // 打开开发者工具
-  // mainWindow.webContents.openDevTools();
+  mainWindow.webContents.openDevTools();
 });
